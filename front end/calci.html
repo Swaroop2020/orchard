@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--style sheet for how to create calculator program-->
+<style>
+div {
+border: 3px solid whitesmoke;
+border-radius:25px;
+width: 300px;
+background-color:whitesmoke;
+box-shadow: 10px 5px slategrey;
+}
+button:hover {
+ background-color: darkslateblue;
+}
+
+.calBtn,.opBtn,.numBtn {
+    background-color: grey;
+    color: white;
+    padding: 8px 10px;
+    margin: 5px 0;
+    border: 1px slategray;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 10%;
+} 
+.clrBtn {
+    background-color: red;
+    color: white;
+    padding: 8px 10px;
+    margin: 5px 0;
+    border: 1px red;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 10%;
+} 
+.numtxt
+{
+    width: 50%;
+  padding: 12px 20px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 1px solid grey;
+  border-radius: 15px;
+  box-sizing: border-box;}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $(".numBtn").click(function(){
+	var value1 = $( this ).val();
+	var value2 = $( "#input" ).val();
+    $( "#input" ).val( value2+value1);
+  });
+  
+  $(".clrBtn").click(function(){
+	$( "#input" ).val("");
+  });
+  
+  $(".opBtn").click(function(){
+	var value1 = $( this ).val();
+	var value2 = $( "#input" ).val();
+    $( "#input" ).val( value2+value1);
+   
+  });
+	$(".calBtn").click(function(){
+		var value2 = eval($( "#input" ).val());
+		$( "#input" ).val( value2);
+	  });
+  
+  
+    $(".clrBtn").dblclick(function(){
+    $("#input").toggle();
+    });
+
+    $("#h1").hover(function(){
+      $(this).fadeOut();
+  },function(){
+    $(this).fadeIn();
+});
+
+  
+});
+
+
+</script>
+
+</head>
+<body style="font-family:Times New Roman;margin-top: 150px;"> 
+<center>
+<div >
+<h1 id="h1"> Calculator</h1>
+<input type="text" class="numtxt" id="input"><br><br>
+<button class="opBtn" value="+">+</button>
+<button class="opBtn" value="-">-</button>
+<button class="opBtn" value="*">*</button>
+<button class="opBtn" value="/">/</button><br>
+<button class="numBtn" value="0">0</button>
+<button class="numBtn" value="1">1</button>
+<button class="numBtn" value="2">2</button>
+<button class="numBtn" value="3">3</button><br>
+<button class="numBtn" value="4">4</button>
+<button class="numBtn" value="5">5</button>
+<button class="numBtn" value="6">6</button>
+<button class="numBtn" value="7">7</button><br>
+<button class="numBtn" value="8">8</button>
+<button class="numBtn" value="9">9</button>
+<button class="calBtn" value="=">=</button>
+<button class="clrBtn"  value="c">C</button>
+
+</div>
+</center>
+
+</body>
+</html>
